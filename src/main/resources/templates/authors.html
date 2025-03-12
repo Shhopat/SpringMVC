@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All authors</title>
+</head>
+<body>
+
+<!-- Проверяем, что список авторов не null и не пуст -->
+<div th:if="${authors != null and !authors.isEmpty()}">
+
+    <div th:each="author : ${authors}">
+        <p th:text="${author.getName()}"></p>
+        <br/>
+    </div>
+</div>
+
+<!-- Если список авторов пуст или null -->
+<p th:if="${authors == null or authors.isEmpty()}">There are no authors</p>
+
+</body>
+</html>
