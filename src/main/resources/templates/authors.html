@@ -10,13 +10,17 @@
 <div th:if="${authors != null and !authors.isEmpty()}">
 
     <div th:each="author : ${authors}">
-        <p th:text="${author.getName()}"></p>
+        <a th:href="@{/authors/{id}(id=${author.getId()})}"
+           th:text="${author.getSurname} + ' ' + ${author.getName()} + ' ' + ${author.getLastName()}">
+        </a>
         <br/>
     </div>
 </div>
-
 <!-- Если список авторов пуст или null -->
 <p th:if="${authors == null or authors.isEmpty()}">There are no authors</p>
+<hr/>
+<a th:href="@{/authors/new}">Create a new author</a>
+
 
 </body>
 </html>

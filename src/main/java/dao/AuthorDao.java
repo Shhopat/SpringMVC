@@ -27,4 +27,26 @@ public class AuthorDao {
         return session.createQuery("FROM Author", Author.class).getResultList();
     }
 
+    @Transactional
+    public void createAuthor(Author author) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(author);
+    }
+
+    @Transactional
+    public Author getByAuthor(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Author.class, id);
+    }
+
+    @Transactional
+    public void update(int id, Author author) {
+        Session session = sessionFactory.getCurrentSession();
+        Author author1 = session.get(Author.class, id);
+        author1.setName(author.name);
+        author1.setSurname(author.getSurname());
+        author1.setLastName(author.getLastName());
+        session.update(author1);
+    }
+
 }

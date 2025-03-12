@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<p th:text="${author.id + '. ' + author.surname + ' ' + author.name + ' ' + author.lastName} "></p>
+<a th:href="@{/authors/{id}/edit(id=${author.getId()})}">Edit</a>
+</body>
+</html>

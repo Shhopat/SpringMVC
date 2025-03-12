@@ -17,6 +17,12 @@ public class Author {
     @Column(name = "name", length = 30, nullable = false, unique = true)
     public String name;
 
+    @Column(name = "surname", length = 30, nullable = false)
+    public String surname;
+
+    @Column(name = "last_name", length = 30, nullable = false)
+    public String lastName;
+
     @OneToMany(mappedBy = "author")
     public List<Book> books;
 
@@ -44,8 +50,24 @@ public class Author {
         this.name = name;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     @Override
     public String toString() {
-        return "id " + id + " " + name + " books: " + books;
+        return id + ". " + surname + " " + name + " " + lastName;
     }
 }
