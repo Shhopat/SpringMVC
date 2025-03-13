@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All authors</title>
+</head>
+<body>
+<p th:text="${book.getId()} + '. ' + ${book.getName()}"></p>
+<br/>
+<p th:text="${book.getAuthor().getSurname} + ' ' + ${book.getAuthor().getName} + ' ' + ${book.getAuthor().getLastName} ">
+
+</p>
+
+</body>
+</html>
