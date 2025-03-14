@@ -38,4 +38,19 @@ public class BookDao {
         return session.get(Book.class, id);
     }
 
+    @Transactional
+    public void remove(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        session.remove(getBookById(id));
+    }
+
+    @Transactional
+    public void update(int id, Book book) {
+        Session session = sessionFactory.getCurrentSession();
+        Book book1 = session.get(Book.class, id);
+        book1.setName(book.getName());
+        book1.setAuthor(book.getAuthor());
+        session.update(book1);
+    }
+
 }

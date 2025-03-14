@@ -7,9 +7,10 @@
 <body>
 <p th:text="${book.getId()} + '. ' + ${book.getName()}"></p>
 <br/>
-<p th:text="${book.getAuthor().getSurname} + ' ' + ${book.getAuthor().getName} + ' ' + ${book.getAuthor().getLastName} ">
-
-</p>
-
+<p th:text="${book.getAuthor().getSurname} + ' ' + ${book.getAuthor().getName} + ' ' + ${book.getAuthor().getLastName} "></p>
+<hr/>
+<a th:href="@{/books/delete{id}(id=${book.getId()})}">Delete</a>
+<br/>
+<a th:href="@{/books/edit/{id}(id=${book.getId()})}">Edit</a>
 </body>
 </html>
