@@ -7,7 +7,10 @@
 <body>
 <p th:text="${book.getId()} + '. ' + ${book.getName()}"></p>
 <br/>
-<p th:text="${book.getAuthor().getSurname} + ' ' + ${book.getAuthor().getName} + ' ' + ${book.getAuthor().getLastName} "></p>
+<div th:if="${book.getAuthor() != null}">
+    <p th:text="${book.getAuthor().getSurname} + ' ' + ${book.getAuthor().getName} + ' ' + ${book.getAuthor().getLastName} "></p>
+</div>
+<p th:if="${book.getAuthor() == null}">not Author</p>
 <hr/>
 <a th:href="@{/books/delete{id}(id=${book.getId()})}">Delete</a>
 <br/>

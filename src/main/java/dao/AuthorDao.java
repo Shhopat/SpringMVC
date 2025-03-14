@@ -49,4 +49,10 @@ public class AuthorDao {
         session.update(author1);
     }
 
+    @Transactional
+    public void remove(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        session.remove(getByAuthor(id));
+    }
+
 }

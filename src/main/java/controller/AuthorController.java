@@ -55,4 +55,10 @@ public class AuthorController {
         return "redirect:/authors";
     }
 
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") int id) {
+        authorDao.remove(id);
+        return "redirect:/authors";
+    }
+
 }

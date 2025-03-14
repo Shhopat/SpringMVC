@@ -6,6 +6,10 @@
 </head>
 <body>
 <p th:text="${author.id + '. ' + author.surname + ' ' + author.name + ' ' + author.lastName} "></p>
+<hr/>
+<br/>
 <a th:href="@{/authors/{id}/edit(id=${author.getId()})}">Edit</a>
+<br/>
+<a th:href="@{/authors/delete/{id}(id=${author.getId()})}">Delete</a>
 </body>
 </html>
