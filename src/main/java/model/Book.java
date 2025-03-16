@@ -30,6 +30,11 @@ public class Book {
         return name;
     }
 
+    public Book(String name, Author author) {
+        this.name = name;
+        this.author = author;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
